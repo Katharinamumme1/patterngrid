@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muster-Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="controls">
+        <label for="patternType">Wähle eine Wiederholungsart:</label>
+        <select id="patternType">
+            <option value="grid-rectangular">Grid (Rechteckig)</option>
+            <option value="grid-hexagonal">Grid (Hexagonal)</option>
+            <option value="grid-offset">Grid (Versetzt)</option>
+            <option value="spiral-archimedean">Spirale (Archimedisch)</option>
+            <option value="spiral-logarithmic">Spirale (Logarithmisch)</option>
+            <option value="kaleidoscope">Kaleidoskop</option>
+            
+        </select>
+        <button id="generatePattern">Muster generieren</button>
+        <button id="clearCanvas">Leeren</button>
+    </div>
+    <svg id="patternCanvas" xmlns="http://www.w3.org/2000/svg"></svg>
+    <script src="script.js"></script>
+</body>
+
+</html>
