@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="workspaces">
+        <!-- Grid Layout für verschiedene Kategorien -->
+        <div class="category" id="grid-rectangular" data-type="grid-rectangular">
+            <div class="filter_grid"></div>
+            <h3>Rechteckiges Gitter</h3>
+            <svg></svg>
+        </div>
+        <div class="category" id="grid-hexagonal" data-type="grid-hexagonal">
+            <div class="filter_grid"></div>
+            <h3>Hexagonales Gitter</h3>
+            <svg></svg>
+        </div>
+        <div class="category" id="spiral-archimedean" data-type="spiral-archimedean">
+            <h3>Archimedische Spirale</h3>
+            <svg></svg>
+        </div>
+        <div class="category" id="spiral-logarithmic" data-type="spiral-logarithmic">
+            <h3>Logarithmische Spirale</h3>
+            <svg></svg>
+        </div>
+        <div class="category" id="kaleidoscope" data-type="kaleidoscope">
+            <h3>Kaleidoskop</h3>
+            <svg></svg>
+        </div>
+
+        <!-- Galerie -->
+        <div id="gallery">
+            <svg class="gallery_item"></svg>
+            <svg class="gallery_item"></svg>
+            <svg class="gallery_item"></svg>
+            <svg class="gallery_item"></svg>
+            <svg class="gallery_item"></svg>
+        </div>
+
+        <!-- Showcase -->
+        <div id="showcase">
+            <div id="board">
+
+                    <div id="upload-form">
+                        <h2>Projekt hochladen</h2>
+                        <form id="upload-project-form">
+                            <label for="project-title">Titel:</label>
+                            <input type="text" id="project-title" name="title" required><br><br>
+                    
+                            <label for="project-description">Beschreibung:</label>
+                            <textarea id="project-description" name="description" required></textarea><br><br>
+                    
+                            <label for="project-image">Bild hochladen:</label>
+                            <input type="file" id="project-image" name="image" accept="image/*" required><br><br>
+                    
+                            <button type="submit">Projekt hochladen</button>
+                        </form>
+                    </div>
+                    
+                <!-- Beispielprojekt -->
+                <div class="project">
+                    <h1>Project name</h1>
+                    <div class="postit">
+                        <p>Beschreibung von Projektdetails...</p>
+                    </div>
+                    <img class="project_images" src="Fabric_27949__43500.jpg" alt="Fabric">
+                    <img class="project_images" src="Fabric_27949__43500.jpg" alt="Fabric">
+                    <img class="project_images" src="Fabric_27949__43500.jpg" alt="Fabric">
+                    <img class="project_images" src="Fabric_27949__43500.jpg" alt="Fabric">
+                </div>
+            </div>
+        </div>
+        <!-- Formular zum Hochladen eines Projekts -->
+
+
+    </div>
+
+    <!-- Verlinke hier das externe JavaScript -->
+    <script src="script.js"></script>
+    <script src="board.js"></script>
+
+</body>
+
+</html>
