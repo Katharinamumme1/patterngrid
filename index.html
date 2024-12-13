@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"></script>
+    <script src="https://d3js.org/d3-voronoi.v1.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+    </div>
+
+    <div class="workspaces">
+
+        <!-- Delaunay-Triangulation -->
+        <div class="category" id="delaunay-triangulation" data-type="delaunay-triangulation">
+            <div class="category-name">Delaunay-Triangulation</div>
+            <button id="downloadBtn">Download SVG</button>
+            <div class="pattern-controls">
+                <label for="lineColor">Farbe:</label>
+                <input type="color" id="lineColor" value="#ff0000">
+            </div>
+            <div class="pattern-controls">
+                <label for="lineWidth">Strichbreite:</label>
+                <input type="number" id="lineWidth" value="2" min="1" max="10">
+            </div>
+            <div>
+                <div class="pattern-controls">
+                    <label for="lineStyle">Linetype:</label>
+                    <select id="lineStyle">
+                        <option value="solid">Durchgezogen</option>
+                        <option value="dashed">Gestrichelt</option>
+                        <option value="dotted">Punktiert</option>
+                    </select>
+                </div>
+            </div>
+            <svg id="drawingSVG-delaunay"></svg>
+        </div>
+
+        <!-- Voronoi-Diagram -->
+        <div class="category" id="voronoi-diagram" data-type="voronoi-diagram">
+            <div class="category-name">Voronoi Diagram</div>
+            <div class="pattern-controls">
+                            <button id="downloadVoronoiBtn">Download SVG</button>
+            </div>
+
+            <div class="pattern-controls">
+                <label for="voronoi-lineColor">Farbe:</label>
+                <input type="color" id="voronoi-lineColor" value="#ff0000">
+            </div>
+            <div class="pattern-controls">
+                <label for="voronoi-lineWidth">Strichbreite:</label>
+                <input type="number" id="voronoi-lineWidth" value="2" min="1" max="10">
+            </div>
+            <div class="pattern-controls">
+                <label for="voronoi-lineStyle">Linetype:</label>
+                <select id="voronoi-lineStyle">
+                    <option value="solid">Durchgezogen</option>
+                    <option value="dashed">Gestrichelt</option>
+                    <option value="dotted">Punktiert</option>
+                </select>
+            </div>
+            <svg id="drawingSVG-voronoi" width="3500" height="1700"></svg>
+</div>
+
+<div class="category" id="custom-brush">
+            <div class="category-name">Custom brush</div>
+<svg id="smallCanvas" width="500" height="500" style="border: 1px solid black;">
+    <g id="rectangleGrid" class="grid"></g>
+    <g id="circleGrid" class="grid"></g>
+    <g id="drawingArea"></g>
+</svg>
+
+<label for="rowsInput">Zeilen: </label>
+<input type="number" id="rowsInput" value="10" min="1" max="50">
+<label for="columnsInput">Spalten: </label>
+<input type="number" id="columnsInput" value="10" min="1" max="50">
+
+<button id="toggleGridBtn">Toggle Grid</button>
+<!-- Rasterauswahl für das neue Gitter -->
+<button id="toggleCircleGridBtn">Toggle Circle Grid</button>
+
+<svg id="largeCanvas" ></svg>
+    </div>
+
+<div class="category" id="fill-grid">
+    <div class="pattern-controls">
+        <!-- Farbwahl -->
+        <input type="color" id="colorPicker" />
+
+        <!-- Form auswählen -->
+        <label for="shapeSelect">Form auswählen:</label>
+        <select id="shapeSelect">
+            <option value="rectangle">Rechteck</option>
+            <option value="triangle">Dreieck</option>
+            <option value="pentagon">Fünfeck</option>
+            <option value="hexagon">Sechseck</option>
+            <option value="circle">Kreis</option>
+        </select>
+
+        <!-- Größe der Zellen -->
+        <label for="cellSize">Größe der Zellen:</label>
+        <input type="number" id="cellSize" value="50" min="10" max="150" step="1" />
+
+        <!-- Zufallsgrößenbereich -->
+        <label for="sizeRange">Zufallsgrößenbereich:</label>
+        <input type="range" id="sizeRange" min="30" max="150" step="5" value="50" />
+
+        <!-- Abstand zwischen Zellen -->
+        <label for="spacing">Abstand zwischen Zellen:</label>
+        <input type="number" id="spacing" value="10" min="0" max="100" step="1" />
+    </div>
+
+    <svg id="gridCanvas" width="1500" height="1500"></svg>
+</div>
+
+<div class="category" id="mandala">
+<div class="category-name">Mandala</div>
+
+
+    <label for="mandala-section-count">Anzahl der Abschnitte: </label>
+    <input type="number"id="mandala-section-count" value="6" min="2" max="12">
+
+    <label for="mandala-grid-toggle">Hilfsgitter einblenden:</label>
+    <input type="checkbox"id="mandala-grid-toggle">
+
+    <label for="mandala-stroke-width">Strichstärke: </label>
+    <input type="number" id="mandala-stroke-width" value="2" min="1" max="10">
+
+    <label for="mandala-color-picker">Farbe wählen:</label>
+
+    <input type="color" id="mandala-color-picker" value="#000000">
+
+    <div id="mandala-canvas-container">
+        <svg id="mandala-canvas" width="2700" height="2700">
+            <!-- Mandala wird hier generiert -->
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+</div>
+
+
+    <script src="delaunay.js"></script>
+    <script src="voronoi.js"></script>
+    <script src="brush.js"></script>
+    <script src="grid.js"></script>
+    <script src="mandala.js"></script>
+    <script src="grid.js"></script>
+
+</body>
+
+</html>
